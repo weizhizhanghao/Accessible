@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">AccessibilityTest</string>
-    <string name="accessibility_service_description">辅助功能</string>
 </resources>

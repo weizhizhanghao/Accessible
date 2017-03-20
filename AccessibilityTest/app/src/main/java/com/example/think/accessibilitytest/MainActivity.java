@@ -23,8 +23,8 @@ public class MainActivity extends Activity {
         this.findViewById(R.id.activeButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent killIntent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
-                startActivity(killIntent);
+                Intent startIntent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
+                startActivity(startIntent);
             }
         });
 

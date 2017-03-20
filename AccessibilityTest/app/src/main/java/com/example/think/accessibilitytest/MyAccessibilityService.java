@@ -23,11 +23,15 @@ public class MyAccessibilityService extends AccessibilityService{
         INVOKE_TYPE = 0;
     }
 
-
+    @Override
+    protected void onServiceConnected() {
+        super.onServiceConnected();
+        Log.d("连接服务成功","连接服务成功" );
+    }
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        this.processAccessibilityEvent(event);
+        processAccessibilityEvent(event);
     }
 
     private void processAccessibilityEvent(AccessibilityEvent event){
