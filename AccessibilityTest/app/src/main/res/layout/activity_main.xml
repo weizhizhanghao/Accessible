@@ -12,14 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/installButton"
-        android:text="安装"
+        android:text="install"
         android:layout_alignParentLeft="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/uninstallButton"
-        android:text="卸载"
+        android:text="unintsall"
         android:layout_toRightOf="@id/installButton"/>
 
     <Button
@@ -27,13 +27,13 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/uninstallButton"
         android:id="@+id/activeButton"
-        android:text="启动"/>
+        android:text="start"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/killAppButton"
-        android:text="退出"
+        android:text="exit"
         android:layout_alignParentRight="true"/>
 
     <!--<LinearLayout

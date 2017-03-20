@@ -15,10 +15,14 @@ import java.io.InputStream;
 
 public class MainActivity extends Activity {
 
+    boolean firstIn = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        firstIn = false;
 
         this.findViewById(R.id.activeButton).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,5 +83,12 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!firstIn)
+            MyAccessibilityService.reset();
     }
 }
