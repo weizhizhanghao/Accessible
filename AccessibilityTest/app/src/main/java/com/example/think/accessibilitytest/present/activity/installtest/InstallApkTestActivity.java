@@ -1,4 +1,4 @@
-package com.example.think.accessibilitytest;
+package com.example.think.accessibilitytest.present.activity.installtest;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,19 +8,22 @@ import android.os.Environment;
 import android.provider.Settings;
 import android.view.View;
 
+import com.example.think.accessibilitytest.R;
+import com.example.think.accessibilitytest.model.intsall.MyAccessibilityService;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainActivity extends Activity {
+public class InstallApkTestActivity extends Activity {
 
     boolean firstIn = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_install_apk_test);
 
         firstIn = false;
 
@@ -44,7 +47,7 @@ public class MainActivity extends Activity {
                     installFile.createNewFile();
                     FileOutputStream out = new FileOutputStream(installFile);
                     byte[] buffer = new byte[512];
-                    InputStream in = MainActivity.this.getAssets().open("test.apk");
+                    InputStream in = InstallApkTestActivity.this.getAssets().open("test.apk");
                     int count;
                     while ((count = in.read(buffer)) != -1){
                         out.write(buffer, 0, count);

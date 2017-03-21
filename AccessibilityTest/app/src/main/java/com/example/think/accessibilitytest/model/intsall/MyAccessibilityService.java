@@ -1,4 +1,4 @@
-package com.example.think.accessibilitytest;
+package com.example.think.accessibilitytest.model.intsall;
 
 import android.accessibilityservice.AccessibilityService;
 import android.util.Log;

@@ -6,110 +6,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    android:gravity="center_horizontal"
+    tools:context=".present.MainActivity">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/installButton"
-        android:text="install"
+        android:id="@+id/install_button"
+        android:text="安装卸载"
         android:layout_alignParentLeft="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/uninstallButton"
-        android:text="unintsall"
-        android:layout_toRightOf="@id/installButton"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/uninstallButton"
-        android:id="@+id/activeButton"
-        android:text="start"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/killAppButton"
-        android:text="exit"
-        android:layout_alignParentRight="true"/>
-
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="server ip"/>
-            <EditText
-                android:id="@+id/server_ip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="保存server ip and prot"
-            android:hint="10.1.1.1:8080"
-            android:onClick="save"/>
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="hello_world" />
-
-
-        <Button
-            android:id="@+id/EmptyTestButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="test"
-            android:text="测试" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="aaaaaaaa"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="bbbbbbbb"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/activeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="openSet"
-            android:text="点击激活应用的辅助功能" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="exit"
-            android:text="exit" />
-
-    </LinearLayout>-->
+        android:id="@+id/pocket_button"
+        android:text="抢红包"
+        android:layout_toRightOf="@id/install_button"/>
 
 </RelativeLayout>

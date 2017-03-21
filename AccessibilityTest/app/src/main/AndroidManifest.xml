@@ -10,7 +10,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".present.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +21,7 @@
         </activity>
 
         <service
-            android:name=".MyAccessibilityService"
+            android:name=".model.intsall.MyAccessibilityService"
             android:enabled="true"
             android:exported="true"
             android:label="@string/app_name"
@@ -28,9 +29,13 @@
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
+
             <meta-data
                 android:name="android.accessibilityservice"
                 android:resource="@xml/access_config" />
         </service>
+
+        <activity android:name=".present.activity.InstallApkTestActivity"></activity>
     </application>
+
 </manifest>
