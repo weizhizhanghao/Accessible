@@ -63,10 +63,20 @@ public class MyAccessibilityService extends AccessibilityService{
 
     }
 
-    private void processKillApp(AccessibilityEvent event){
+    private void processUnInstallApp(AccessibilityEvent event){
 
         if (event.getSource() != null){
-            if (event.getPackageName().equals("com.example.think.accessibilitytest")){
+            if (event.getPackageName().equals("com.android.packageinstaller")){
+                List<AccessibilityNodeInfo> uninstall_node = event.getSource().findAccessibilityNodeInfosByText("卸载");
+                if (uninstall_node != null && !uninstall_node.isEmpty()){
+                    AccessibilityNodeInfo nodeInfo;
+                    for (int i = 0; i < uninstall_node.size(); i ++){
+                        nodeInfo = uninstall_node.get(i);
+                        if (nodeInfo.getClassName().equals("android.widget.Button") && nodeInfo.isEnabled()){
+                            nodeInfo.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                        }
+                    }
+                }
                 List<AccessibilityNodeInfo> ok_node = event.getSource().findAccessibilityNodeInfosByText("确定");
                 if (ok_node != null && !ok_node.isEmpty()){
                     AccessibilityNodeInfo nodeInfo;
@@ -83,8 +93,9 @@ public class MyAccessibilityService extends AccessibilityService{
     }
 
     private void processInstallApp(AccessibilityEvent event){
+
         if (event.getSource() != null){
-            if (event.getPackageName().equals("com.example.think.accessibilitytest")){
+            if (event.getPackageName().equals("com.android.packageinstaller")){
                 List<AccessibilityNodeInfo> continue_install_node = event.getSource().findAccessibilityNodeInfosByText("继续安装");
                 if(continue_install_node != null && !continue_install_node.isEmpty()){
                     AccessibilityNodeInfo nodeInfo;
@@ -107,16 +118,16 @@ public class MyAccessibilityService extends AccessibilityService{
                     }
                 }
 
-//                List<AccessibilityNodeInfo> next_step_info = event.getSource().findAccessibilityNodeInfosByText("下一步");
-//                if (next_step_info != null && !next_step_info.isEmpty()){
-//                    AccessibilityNodeInfo nodeInfo;
-//                    for (int i = 0; i < next_step_info.size(); i ++){
-//                        nodeInfo = next_step_info.get(i);
-//                        if (nodeInfo.getClassName().equals("android.widget.Button") && nodeInfo.isEnabled()){
-//                            nodeInfo.performAction(AccessibilityNodeInfo.ACTION_CLICK);
-//                        }
-//                    }
-//                }
+                List<AccessibilityNodeInfo> next_step_info = event.getSource().findAccessibilityNodeInfosByText("下一步");
+                if (next_step_info != null && !next_step_info.isEmpty()){
+                    AccessibilityNodeInfo nodeInfo;
+                    for (int i = 0; i < next_step_info.size(); i ++){
+                        nodeInfo = next_step_info.get(i);
+                        if (nodeInfo.getClassName().equals("android.widget.Button") && nodeInfo.isEnabled()){
+                            nodeInfo.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                        }
+                    }
+                }
 
                 List<AccessibilityNodeInfo> ok_node = event.getSource().findAccessibilityNodeInfosByText("打开");
                 if (ok_node != null && !ok_node.isEmpty()){
@@ -132,7 +143,7 @@ public class MyAccessibilityService extends AccessibilityService{
         }
     }
 
-    private void processUnInstallApp(AccessibilityEvent event){
+    private void processKillApp(AccessibilityEvent event){
 
         if (event.getSource() != null){
             if (event.getPackageName().equals("com.android.settings")){

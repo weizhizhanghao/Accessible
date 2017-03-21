@@ -2,9 +2,8 @@
 <accessibility-service
     android:canRetrieveWindowContent="true"
     android:accessibilityFlags=""
-    android:notificationTimeout="100"
+    android:notificationTimeout="1000"
     android:accessibilityFeedbackType="feedbackGeneric"
     android:accessibilityEventTypes="typeAllMask"
     android:description="@string/app_name"
-    android:packageNames="com.example.think.accessibilitytest,com.example.think.circletest"
     xmlns:android="http://schemas.android.com/apk/res/android"  />
